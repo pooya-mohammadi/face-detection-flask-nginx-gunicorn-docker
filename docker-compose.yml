@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  face:
+    build: ./app
+    container_name: face
+    restart: always
+    expose:
+      - 660
+    environment:
+      - ENDPOINT=/face
+      - FACE_DETECTION_MODEL=MTCNNTorchFaceDetector
+    command: gunicorn --workers=2 --threads 1 -b 0.0.0.0:660 entry_point:app --worker-class sync
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 8000:80
+    depends_on:
+      - face
