@@ -1,6 +1,6 @@
 # Face-Detection-flask-gunicorn-nginx
 
-This is a simple demonstration of dockerized face-detection API which is implemented with flask and nginx and scaled
+This is a simple demonstration of dockerized face-detection API-restful which is implemented with flask and nginx and scaled
 with gunicorn.
 
 # Notes
