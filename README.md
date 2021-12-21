@@ -50,7 +50,7 @@ To send an image and get back the boxes run the following commands:
 If you run the service on your local system the following request shall work perfectly:
 
 ```terminal
-curl --request POST http://127.0.0.1:8080/face -F image=@./sample-images/movie-stars.jpg
+curl --request POST http://127.0.0.1:8000/face -F image=@./sample-images/movie-stars.jpg
 ```
 
 # Issues
