@@ -1,7 +1,7 @@
-# Face-Detection-flask-gunicorn-nginx
+# Face-Detection-flask-gunicorn-nginx-docker
 
 This is a simple demonstration of dockerized face-detection API-restful which is implemented with flask and nginx and scaled
-with gunicorn.
+with gunicorn. This web-api accepts an image as an input and returns face-box coordinates. 
 
 # Notes
 
@@ -26,10 +26,6 @@ with gunicorn.
     4. If your new model is based on `tensorflow`, comment the `pytorch` installation section in `app/Dockerfile` and
        uncomment the `tensorflow` installation lines.
 
-# ScaleUp
-
-I scaled the project using gunicorn
-
 # RUN
 
 To run the API, install `docker` and `docker-compose`, execute the following command:
@@ -51,6 +47,23 @@ If you run the service on your local system the following request shall work per
 
 ```terminal
 curl --request POST http://127.0.0.1:8000/face -F image=@./sample-images/movie-stars.jpg
+```
+
+The output should be like the following:
+```text
+{
+"face_1":[269,505,571,726],
+"face_10":[73,719,186,809],
+"face_11":[52,829,172,931],
+"face_2":[57,460,187,550],
+"face_3":[69,15,291,186],
+"face_4":[49,181,185,279],
+"face_5":[53,318,205,424],
+"face_6":[18,597,144,716],
+"face_7":[251,294,474,444],
+"face_8":[217,177,403,315],
+"face_9":[175,765,373,917]
+}
 ```
 
 # Issues
