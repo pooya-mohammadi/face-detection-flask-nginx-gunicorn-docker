@@ -49,7 +49,7 @@ If you run the service on your local system the following request shall work per
 curl --request POST http://127.0.0.1:8000/face -F image=@./sample-images/movie-stars.jpg
 ```
 
-The output should be like the following:
+The output will be as follows:
 ```text
 {
 "face_1":[269,505,571,726],
