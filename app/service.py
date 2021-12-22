@@ -20,5 +20,5 @@ class Inference:
         boxes = objects['boxes']
         if boxes and len(boxes[0]):
             images = Box.get_box_img(img, boxes)
-            faces = {f"face_{i}": box for i, box in enumerate(boxes, 1)}
+            faces = {f"face_{i}": [int(b) for b in box] for i, box in enumerate(boxes, 1)}
         return jsonify(faces)
