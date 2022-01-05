@@ -1,7 +1,7 @@
 from endpoints import FaceDetection
-from base_app import app, api, ENDPOINT, HOST, PORT_NUMBER
+from base_app import app, api, ENDPOINT
 
 api.add_resource(FaceDetection, ENDPOINT)
 
 if __name__ == '__main__':
-    app.run(HOST, port=PORT_NUMBER)
+    app.run("127.0.0.1", port=3000)
