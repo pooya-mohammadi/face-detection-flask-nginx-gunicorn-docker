@@ -6,13 +6,15 @@ from flask_restful import Api, reqparse
 
 # define the app and the api variables
 ENDPOINT = os.getenv('ENDPOINT', '/face')
-HOST = "127.0.0.1"
+# HOST = "0.0.0.0"
 app = Flask(ENDPOINT)
 api = Api(app)
 
-
 PORT_NUMBER = int(os.getenv('PORT_NUMBER', 8080))
 
+# get debugging mode condition, default is True:
+debugging = os.getenv("DEBUGGING", 'True').lower() in ('true', '1', 't')
+print(f"[INFO] debugging mode is set to: {debugging}")
 # load the model and weights
 FACE_DETECTION_MODEL = os.getenv('FACE_DETECTION_MODEL', 'MTCNNTorchFaceDetector')
 
