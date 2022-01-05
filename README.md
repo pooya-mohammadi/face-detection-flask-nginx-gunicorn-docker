@@ -1,7 +1,6 @@
 # Face-Detection-flask-gunicorn-nginx-docker
 
-This is a simple demonstration of dockerized face-detection API-restful which is implemented with flask and nginx and scaled
-with gunicorn. This web-api accepts an image as an input and returns face-box coordinates. 
+This is a simple implementation of dockerized face-detection restful-API implemented with flask, Nginx, and scaled up with Gunicorn. This web service takes in an image and returns face-box coordinates.
 
 # Notes
 
@@ -49,7 +48,7 @@ If you run the service on your local system the following request shall work per
 curl --request POST http://127.0.0.1:8000/face -F image=@./sample-images/movie-stars.jpg
 ```
 
-The output should be like the following:
+The output will be as follows:
 ```text
 {
 "face_1":[269,505,571,726],
